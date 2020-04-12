@@ -244,6 +244,14 @@ Defines *colour.models* sub-package API changes.
 API_CHANGES : dict
 """
 
+# v0.3.16
+API_CHANGES['ObjectRenamed'] = API_CHANGES['ObjectRenamed'] + [
+    [
+        'colour.models.ACES_RICD',
+        'colour.characterisation.ACES_RICD',
+    ],
+]
+
 if not is_documentation_building():
     sys.modules['colour.models'] = models(sys.modules['colour.models'],
                                           build_API_changes(API_CHANGES))
